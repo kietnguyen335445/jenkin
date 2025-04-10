@@ -31,9 +31,9 @@ pipeline {
     }
     stage('Build and Push Docker Image') {
       environment {
-        DOCKER_IMAGE = "tolitun/ultimate-cicd:${BUILD_NUMBER}"
+        DOCKER_IMAGE = "tolitun/demo-java-app:${BUILD_NUMBER}"
         // DOCKERFILE_LOCATION = "spring-boot-app/Dockerfile"
-        REGISTRY_CREDENTIALS = credentials('docker-cred')
+        REGISTRY_CREDENTIALS = credentials('dockerhub')
       }
       steps {
         script {
