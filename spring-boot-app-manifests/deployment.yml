@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: tolitun/jenkin-argo-cide-pipline:v1
+        image: tolitun/jenkin-argo-cide-pipline:v4
         ports:
         - containerPort: 8080
