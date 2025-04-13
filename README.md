@@ -129,5 +129,11 @@ pipeline {
 #  🚀 Setup Instructions
 ## Setup an AWS EC2 Instance
 Login to an AWS account using a user with admin privileges and ensure your region is set to ``` ap-souteast-1``` ``` Singapore ```
+Move to the EC2 console. Click ```Launch Instance.```
+
+For name use ```Main-Server```
+
+Select AMIs as ```Ubuntu``` and select Instance Type as ```t2.medium```. Create new Key Pair and Create a new Security Group with traffic allowed from ssh, http and https.
+![ec2](https://github.com/user-attachments/assets/9bb74427-512f-4a77-b3d8-dde92bf4bf86)
 
 
