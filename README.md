@@ -127,6 +127,6 @@ pipeline {
 ```
 ---
 ##  🚀 Setup Instructions
-  Setup an AWS EC2 Instance
+  #Setup an AWS EC2 Instance
 
 
