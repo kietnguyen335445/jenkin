@@ -1,4 +1,4 @@
-# ☕ Jenkins Pipeline for basic Java Application with Maven, SonarQube, Argo CD and Kubernetes
+# ☕ Jenkins Pipeline for a simple Java Application with Maven, SonarQube, Argo CD and Kubernetes
 
 This project demonstrates a complete CI/CD pipeline for a Java-based application using:
 - **Jenkins** for automation
@@ -133,7 +133,28 @@ Move to the EC2 console. Click ```Launch Instance.```
 
 For name use ```Main-Server```
 
-Select AMIs as ```Ubuntu``` and select Instance Type as ```t2.medium```. Create new Key Pair and Create a new Security Group with traffic allowed from ssh, http and https.
+Select AMIs as ```Ubuntu``` and select Instance Type as ```t2.medium```. 
+Create new Key Pair and Create a new Security Group with traffic allowed from ssh, http and https.
+
 ![ec2](https://github.com/user-attachments/assets/9bb74427-512f-4a77-b3d8-dde92bf4bf86)
+
+## Run Java application on EC2
+```bash
+git clone https://github.com/kietnguyen335445/jenkin
+cd spring-boot-app
+sudo apt update
+sudo apt install maven
+mvn clean package
+mvn -v
+sudo apt update
+sudo apt install docker.io
+sudo usermod -aG docker ubuntu
+sudo chmod 666 /var/run/docker.sock
+sudo systemctl restart docker
+docker build -t jenkin-argo-cicd-pipeline:v1 .
+docker run -d -p 8010:8080 -t jenkin-argo-cicd-pipeline:v1
+```
+
+
 
 
