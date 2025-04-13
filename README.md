@@ -37,3 +37,31 @@ This project demonstrates a complete CI/CD pipeline for a Java-based application
 
 ## 🧱 Architecture
 
+---
+
+## 🛠️ Technologies Used
+
+- **Java 17**
+- **Maven**
+- **Jenkins**
+- **SonarQube**
+- **Docker**
+- **Argo CD**
+- **Kubernetes (K8s)**
+- **GitHub/GitLab**
+
+---
+
+## 📁 Project Structure
+
+```plaintext
+.
+├── Jenkinsfile
+├── src/
+├── pom.xml
+├── sonar-project.properties
+├── manifests/                 # K8s YAML for deployment/service
+│   └── deployment.yaml
+├── Dockerfile
+└── README.md
+
