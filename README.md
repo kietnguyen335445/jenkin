@@ -9,7 +9,7 @@ This project demonstrates a complete CI/CD pipeline for a Java-based application
 
 ---
 
-## 📚 Table of Contents
+# 📚 Table of Contents
 
 - [📚 Table of Contents](#-table-of-contents)
 - [📌 Features](#-features)
@@ -24,7 +24,7 @@ This project demonstrates a complete CI/CD pipeline for a Java-based application
 
 ---
 
-## 📌 Features
+# 📌 Features
 
 - Automated CI/CD using Jenkins
 - Code quality checks using SonarQube
@@ -34,7 +34,9 @@ This project demonstrates a complete CI/CD pipeline for a Java-based application
 
 ---
 
-## 🧱 Architecture
+# 🧱 Architecture
+
+![aca4cccf-9d4f-4d3d-b2fb-de42b8c12b5b](https://github.com/user-attachments/assets/30371100-a276-4f63-ad03-3a3bb7116a72)
 
 ---
 
@@ -126,7 +128,7 @@ pipeline {
 
 ```
 ---
-##  🚀 Setup Instructions
-# Setup an AWS EC2 Instance
+#  🚀 Setup Instructions
+## Setup an AWS EC2 Instance
 
 
