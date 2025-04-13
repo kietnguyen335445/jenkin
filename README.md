@@ -125,7 +125,8 @@ pipeline {
 }
 
 ```
-
-## 🔧 Jenkins Pipeline Stages
+---
+##  🚀 Setup Instructions
+  Setup an AWS EC2 Instance
 
 
