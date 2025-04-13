@@ -13,14 +13,10 @@ This project demonstrates a complete CI/CD pipeline for a Java-based application
 
 - [📚 Table of Contents](#-table-of-contents)
 - [📌 Features](#-features)
-- [🧱 Architecture](#-architecture)
 - [🛠️ Technologies Used](#️-technologies-used)
 - [🔧 Jenkins Pipeline Stages](#-jenkins-pipeline-stages)
 - [🚀 Setup Instructions](#-setup-instructions)
-- [✅ How to Run](#-how-to-run)
-- [📸 Screenshots](#-screenshots)
-- [🙌 Contributing](#-contributing)
-- [📄 License](#-license)
+
 
 ---
 
