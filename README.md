@@ -184,6 +184,87 @@ Goto Jenkins Dashboard \==> Manage Jenkins \==> Plugins \==> Available plugins
 Docker Pipeline
 
 SonarQube Scanner
+## Configure a Sonar Server
+```bash
+sudo adduser sonarqube
+sudo su - sonarqube
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
+sudo apt install unzip
+unzip *
+chmod -R 755 /home/sonarqube/sonarqube-9.4.0.54424
+chown -R sonarqube:sonarqube /home/sonarqube/sonarqube-9.4.0.54424
+cd sonarqube-9.4.0.54424/bin/linux-x86-64/
+./sonar.sh start
+```
+Edit the inbound traffic rule to only allow custom TCP port ```9000```
+Username: admin
+Password: admin
+# Create Credentials in Jenkins
+Step 1: Credential for SonarQube
+Go to My Account ==> Security
+## On jenkins
+Go to -> Jenkins -> Manage Jenkins -> Manage Credentials -> Stored scoped to jenkins -> global -> Add Credentials
+![jenkin5](https://github.com/user-attachments/assets/7ab44197-25e7-4b30-9ba2-88212a025451)
+Step 2: Create DockerHub Credential in Jenkins
+Goto -> Jenkins -> Manage Jenkins -> Manage Credentials -> Stored scoped to jenkins -> global -> Add Credentials
+![jenkin6](https://github.com/user-attachments/assets/5b3ab05a-a1d4-43ea-9674-be2318bd01ee)
+Step 3: Create GitHub credential in Jenkins
+Goto GitHub ==> Setting ==> Developer Settings ==> Personal access tokens ==> Tokens(Classic) ==> Generate new token
+![jenkin7](https://github.com/user-attachments/assets/f37e3c47-8209-4d54-841e-905230eb27de)
+# Install Docker
+```bash
+sudo apt update
+sudo apt install docker.io
+sudo usermod -aG docker $USER
+sudo usermod -aG docker jenkins
+sudo systemctl restart docker
+```
+Do jenkin Restart
+# Run Pipeline
+![jenkin-pip](https://github.com/user-attachments/assets/4319ebcf-9992-4085-a61b-99de2198ea5f)
+SonarQube Output:
+![sonar](https://github.com/user-attachments/assets/242945a5-3310-4211-9ca3-f80f883083a5)
+Docker Hub:
+![docker](https://github.com/user-attachments/assets/157fd359-3ff4-4726-a934-203bb044d8d0)
+# Continuous Delivery Part
+# Argo CD Setup
+Install on Ubuntu locally
+# Setup Minikube
+```bash
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+sudo usermod -aG docker $USER && newgrp docker
+sudo reboot docker
+minikube start --driver=docker
+```
+# Install kubectl
+```bash
+curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin
+kubectl version
+```
+# Install Argo CD operator
+```bash
+curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.24.0/install.sh | bash -s v0.24.0
+kubectl create -f https://operatorhub.io/install/argocd-operator.yaml
+kubectl get csv -n operators
+kubectl get pods -n operators
+```
+```kubectl edit svc example-argocd-server``` and change from ClusterIP to NodePort
+![argocd-nodeport](https://github.com/user-attachments/assets/8b1ceedc-64e4-4b2c-b477-7af27c43407f)
+# Password for Argo CD
+```bash
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
+Setup Github Repository manifest and Kubernetes cluster.
+![argocd-2](https://github.com/user-attachments/assets/d451f2a9-ed56-459b-819c-29fe5e9f41d3)
+
+![argocd-3](https://github.com/user-attachments/assets/189f9963-6b80-4ec7-932d-0349ac6ecf38)
+
+![argocd](https://github.com/user-attachments/assets/329fd774-1b47-4b3c-a3d7-139ac6707ddd)
+
+
 
 
 
