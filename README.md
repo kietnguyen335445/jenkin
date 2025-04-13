@@ -154,6 +154,38 @@ sudo systemctl restart docker
 docker build -t jenkin-argo-cicd-pipeline:v1 .
 docker run -d -p 8010:8080 -t jenkin-argo-cicd-pipeline:v1
 ```
+## Continuous Integration
+Step 1: Install Jenkins
+```bash
+sudo apt update
+sudo apt install openjdk-17-jdk -y
+java -version
+curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+```
+Step 2: Setup Jenkins
+You can get the ec2-instance-public-ip-address from your AWS EC2 console page.
+
+Edit the inbound traffic rule to only allow custom TCP port ```8080```
+
+http://:<ec2-instance-public-ip-address>8080
+```sudo cat /var/lib/jenkins/secrets/initialAdminPassword``` to get the password of jenkin
+## Create a new Jenkins pipeline
+Click on New Item. Select Pipeline and Enter an Item name.
+![jenkin-2](https://github.com/user-attachments/assets/5813f77a-ff3f-45cb-9654-d75e72390f20)
+## Install the necessary Jenkins plugins
+Goto Jenkins Dashboard \==> Manage Jenkins \==> Plugins \==> Available plugins
+
+Docker Pipeline
+
+SonarQube Scanner
+
+
 
 
 
