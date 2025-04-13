@@ -36,7 +36,7 @@ This project demonstrates a complete CI/CD pipeline for a Java-based application
 
 # 🧱 Architecture
 ---
-![aca4cccf-9d4f-4d3d-b2fb-de42b8c12b5b](https://github.com/user-attachments/assets/30371100-a276-4f63-ad03-3a3bb7116a72)
+
 
 ## 🛠️ Technologies Used
 
@@ -128,5 +128,6 @@ pipeline {
 ---
 #  🚀 Setup Instructions
 ## Setup an AWS EC2 Instance
-
+Login to an AWS account using a user with admin privileges and ensure your region is set to ```bash ap-souteast-1 Singapore
+```
 
