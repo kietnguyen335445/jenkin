@@ -15,7 +15,6 @@ This project demonstrates a complete CI/CD pipeline for a Java-based application
 - [📌 Features](#-features)
 - [🧱 Architecture](#-architecture)
 - [🛠️ Technologies Used](#️-technologies-used)
-- [📁 Project Structure](#-project-structure)
 - [🔧 Jenkins Pipeline Stages](#-jenkins-pipeline-stages)
 - [🚀 Setup Instructions](#-setup-instructions)
 - [✅ How to Run](#-how-to-run)
@@ -52,16 +51,6 @@ This project demonstrates a complete CI/CD pipeline for a Java-based application
 
 ---
 
-## 📁 Project Structure
+## 🔧 Jenkins Pipeline Stages
 
-```plaintext
-.
-├── Jenkinsfile
-├── src/
-├── pom.xml
-├── sonar-project.properties
-├── manifests/                 # K8s YAML for deployment/service
-│   └── deployment.yaml
-├── Dockerfile
-└── README.md
 
