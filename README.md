@@ -128,6 +128,6 @@ pipeline {
 ---
 #  🚀 Setup Instructions
 ## Setup an AWS EC2 Instance
-Login to an AWS account using a user with admin privileges and ensure your region is set to ```bash ap-souteast-1 Singapore ```
+Login to an AWS account using a user with admin privileges and ensure your region is set to ``` ap-souteast-1``` ``` Singapore ```
 
 
