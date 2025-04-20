@@ -59,13 +59,12 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/kietnguyen335445/jenkin.git'
+        git branch: 'main', url: 'https://github.com/kietnguyen335445/jenkin.git'
       }
     }
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
-        // build the project and create a JAR file
         sh 'cd spring-boot-app && mvn clean package'
       }
     }
@@ -82,7 +81,6 @@ pipeline {
     stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "tolitun/jenkin-argo-cicd-pipeline:${BUILD_NUMBER}"
-        // DOCKERFILE_LOCATION = "spring-boot-app/Dockerfile"
         REGISTRY_CREDENTIALS = credentials('dockerhub')
       }
       steps {
