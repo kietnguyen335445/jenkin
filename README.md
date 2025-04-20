@@ -58,13 +58,11 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh 'echo passed'
         git branch: 'main', url: 'https://github.com/kietnguyen335445/jenkin.git'
       }
     }
     stage('Build and Test') {
       steps {
-        sh 'ls -ltr'
         sh 'cd spring-boot-app && mvn clean package'
       }
     }
